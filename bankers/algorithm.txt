@@ -1,0 +1,49 @@
+1. Start
+
+2. Define a structure "bankers" to hold the necessary variables and arrays.
+
+3. Define functions to initialize the structure, input data, implement the Banker's algorithm, search for safe processes, and display the results.
+
+4. In the bankers_init function:
+   - Set the initial values of variables and arrays in the structure.
+
+5. In the bankers_input function:
+   - Prompt the user to enter the number of processes and resources.
+   - Read the allocated resources for each process and calculate the needed resources.
+   - Read the currently available resources in the system.
+
+6. In the bankers_method function:
+   - Initialize the iteration variable i to 0.
+   - Start an infinite loop.
+   - Check if the process at index i is not finished.
+   - Call the bankers_search function to check if the process can be executed.
+   - If the process can be executed:
+     - Add the process to the result array and mark it as finished.
+     - Update the available resources.
+   - Increment i.
+   - If i reaches the number of processes:
+     - Check if the available resources have not changed.
+     - Update the work array with the current available resources.
+     - If the available resources have not changed, break the loop.
+     - Otherwise, reset i to 0 and continue the loop.
+
+7. In the bankers_search function:
+   - Iterate through the needed resources of the process at index i.
+   - If any of the needed resources is greater than the available resources, return -1.
+   - Otherwise, return 0.
+
+8. In the bankers_display function:
+   - Display the allocated, maximum, and needed resources for each process.
+   - Display the sequence of safe processes.
+   - Display the sequence of unsafe processes.
+   - Display the result indicating if the system is in a safe state or deadlock may occur.
+
+9. In the main function:
+   - Print a title for the program.
+   - Create an instance of the bankers structure.
+   - Call the bankers_init function to initialize the structure.
+   - Call the bankers_input function to input the necessary data.
+   - Call the bankers_method function to implement the Banker's algorithm.
+   - Call the bankers_display function to display the results.
+
+10. End
